@@ -1,2 +1,12 @@
-name: A workflow for my Hello World file
-on: push
+# name: A workflow for my Hello World file # name of the workflow
+# on: push #triggering event for the workflow
+
+jobs:                                 # jobs: the base component of a workflow -- what does this mean in parctice?
+  build:                              # build: the identifyer we are attaching to this job
+    name: Hello world action          # name: of the workflow (displayed on github when the workflow is running)
+    runs-on: ubuntu-latest            # runs-on: defines the type of machine to run this job on
+    steps:                            # steps: the linear secquence of operations to make this job
+      - uses: actions/checkout@v1     # uses checkout: an action called `checkout` to allow the workflow access to the contents of this repo
+      - uses: ./action-a              # uses relative path: relative path to the action created for action-a directory of this repo 
+        with:                         # with: specifies the variables that will be made available to your action in the runtime environment. 
+          MY_NAME: "Mona"             # MY_NAME is the environment input variable made available to this action during runtime
