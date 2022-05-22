@@ -1,5 +1,5 @@
-# name: A workflow for my Hello World file # name of the workflow
-# on: push #triggering event for the workflow
+name: A workflow for my Hello World file # name of the workflow
+on: push #triggering event for the workflow
 
 jobs:                                 # jobs: the base component of a workflow -- what does this mean in parctice?
   build:                              # build: the identifyer we are attaching to this job
